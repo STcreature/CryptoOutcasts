@@ -21,7 +21,7 @@ h3{
 }
 
 .value-container{
-  background-color: #4CAF50;
+  background-color: teal;
   padding: 3px;
   width: fit-content;
   margin: auto;
@@ -32,5 +32,17 @@ h3{
   margin-top: 30px;
 }
 
+.supply{
+  margin: auto;
+  margin-top: 20px;
+  background-color: teal;
+  width: fit-content;
+  padding: 20px
+}
+
+.mints{
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 

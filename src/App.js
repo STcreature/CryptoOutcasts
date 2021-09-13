@@ -687,6 +687,7 @@ function App() {
   const [rangeValue, setRangeValue] = useState("4")
   const [mint_status, setMintStatus] = useState(true)
   const [mint_color, setMintColor] = useState("btn-disabled-big")
+  const [totalminted, setTotalMinted] = useState(0)
 
 
   function initiateMetamask(){
@@ -712,6 +713,11 @@ function App() {
         setBtnText("Connected")
         setMintStatus(false)
         setMintColor("btn-green-big")
+		const web3 = new Web3(window.ethereum);
+		const contractAddr = '0xEAF0cebB6B2843b1896cb2b66500472b65f9CEc8';
+		const OutcastsContract = new web3.eth.Contract(abi, contractAddr);
+		setTotalMinted(await OutcastsContract.methods.totalSupply().call({from: connectedAddress}))
+
       }
       catch (error) {
         setBtnText("Refresh Page")
@@ -750,6 +756,9 @@ function App() {
         </div>
         <div className="mint">
           <Button btnText="MINT" btnColor={mint_color} btnState={mint_status} onClickFunction={initiateMint}></Button>
+		  <div className="supply">
+			  <h2 className="mints">{totalminted}/4500 Minted.</h2>
+		  </div>
         </div>
       </div>
     </div>
