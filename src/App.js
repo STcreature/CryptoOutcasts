@@ -714,7 +714,7 @@ function App() {
         setMintStatus(false)
         setMintColor("btn-green-big")
 		const web3 = new Web3(window.ethereum);
-		const contractAddr = '0xF9eFCa2Ca296a25ad5A144A6719f956a0759d907';
+		const contractAddr = '0xe6749d06beA9aBC495313CdB80586B102a3c1942';
 		const OutcastsContract = new web3.eth.Contract(abi, contractAddr);
 		setTotalMinted(await OutcastsContract.methods.totalSupply().call({from: connectedAddress}))
 
@@ -734,7 +734,7 @@ function App() {
 
   const initiateMint = async (numMint) =>{
     const web3 = new Web3(window.ethereum);
-    const contractAddr = '0xF9eFCa2Ca296a25ad5A144A6719f956a0759d907';
+    const contractAddr = '0xe6749d06beA9aBC495313CdB80586B102a3c1942';
     const OutcastsContract = new web3.eth.Contract(abi, contractAddr);
     const price = "25000000000000000"
     const total = web3.utils.toBN(rangeValue * parseInt(price))
