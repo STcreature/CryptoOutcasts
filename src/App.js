@@ -757,7 +757,7 @@ function App() {
         <div className="mint">
           <Button btnText="MINT" btnColor={mint_color} btnState={mint_status} onClickFunction={initiateMint}></Button>
 		  <div className="supply">
-			  <h2 className="mints">{totalminted}/4500 Minted.</h2>
+			  <h2 className="mints">{totalminted}/400 Minted.</h2>
 		  </div>
         </div>
       </div>
